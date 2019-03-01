@@ -40,7 +40,3 @@ logging:
     com.netflix: WARN
     org.springframework.web: WARN
     com.itemsharing: DEBUG
-
-management:
-  security:
-    enabled: false
