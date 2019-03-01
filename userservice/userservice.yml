@@ -1,27 +1,28 @@
 spring:
   jpa:
-    show-sql: "true"
+    show-sql: 'true'
     properties:
       hibernate:
-        dialect: "org.hibernate.dialect.MySQL5Dialect"
+        dialect: org.hibernate.dialect.MySQL5Dialect
     hibernate:
       ddl-auto: update
   database:
-    driverClassName: "com.mysql.jdbc.Driver"
+    driverClassName: com.mysql.jdbc.Driver
   datasource:
-    url: "jdbc:mysql://localhost:3306/itemsharingdatabase"
-    username: "root"
-    password: "{cipher}f2bcf4a1f058310b346e32aff691c8b539fa814584a43abdc391be048af36da7"
-    testWhileIdle: "true"
-    validationQuery: "SELECT 1"
-    
+    url: jdbc:mysql://localhost:3306/itemsharingdatabase
+    username: root
+    password: '{cipher}f2bcf4a1f058310b346e32aff691c8b539fa814584a43abdc391be048af36da7'
+    testWhileIdle: 'true'
+    validationQuery: SELECT 1
+
 security:
-  basic:
-    enabled: false
-    
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8901/user
+
 server:
   port: 8081
-  
+
 eureka:
   instance:
     preferIpAddress: true
@@ -30,3 +31,12 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+
+signing:
+  key: 345345fsdgsf5345
+
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.itemsharing: DEBUG
