@@ -9,16 +9,16 @@ spring:
   database:
     driverClassName: com.mysql.jdbc.Driver
   datasource:
-    url: jdbc:mysql://localhost:3306/itemsharingdatabase
+    url: jdbc:mysql://mysql-aws.cmgnm8kwotzy.us-east-2.rds.amazonaws.com:3306/itemsharingdatabase
     username: root
-    password: '{cipher}f2bcf4a1f058310b346e32aff691c8b539fa814584a43abdc391be048af36da7'
+    password: '{cipher}1d094d53408c2bc81fcfb7062eec889ab8fed3062bb9c2bcc591340bb4e8340c'
     testWhileIdle: 'true'
     validationQuery: SELECT 1
 
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:8901/user
+      user-info-uri: http://18.220.211.153:8901/user
 
 server:
   port: 8082
@@ -30,7 +30,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://18.220.211.153:8761/eureka
 
 logging:
   level:
